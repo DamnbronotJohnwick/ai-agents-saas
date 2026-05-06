@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   LayoutDashboard,
   ListTodo,
@@ -22,8 +22,18 @@ import {
 
 type Tab = "overview" | "queue" | "history" | "settings";
 
+// Format number without locale dependency to avoid hydration mismatch
+function formatNumber(num: number): string {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 export function Sidebar() {
   const [activeTab, setActiveTab] = useState<Tab>("overview");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const activeAgents = agents.filter(
     (a) => a.status === "online" || a.status === "working"
@@ -80,7 +90,7 @@ export function Sidebar() {
                     <span className="text-sm">Tarefas Completadas</span>
                   </div>
                   <span className="text-lg font-semibold text-foreground">
-                    {todayTasks.toLocaleString()}
+                    {mounted ? formatNumber(todayTasks) : "—"}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
