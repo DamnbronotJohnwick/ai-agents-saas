@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  /* Cores do Design System */
+  --color-background: #0A0E27;
+  --color-foreground: #FFFFFF;
+  --color-primary: #FF1744;
+  --color-primary-hover: #E53935;
+  --color-accent: #1A1F3A;
+  --color-accent-dark: #121631;
+  --color-border: #2A3050;
+  --color-border-light: #3A4070;
+  --color-muted: rgba(255, 255, 255, 0.6);
+  --color-muted-foreground: rgba(255, 255, 255, 0.4);
+  
+  /* Status */
+  --color-online: #22C55E;
+  --color-offline: #EF4444;
+  --color-working: #EAB308;
+  
+  /* Radius */
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+  
+  /* Shadows 3D */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4);
+  --shadow-red: 0 0 30px rgba(255, 23, 68, 0.15);
+  
+  /* Fonts */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* Scrollbar Custom */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-light);
+}
+
+/* Animações */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 1s linear infinite;
+}
+
+/* Stagger animation para cards */
+.card-stagger {
+  opacity: 0;
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.card-stagger:nth-child(1) { animation-delay: 0.02s; }
+.card-stagger:nth-child(2) { animation-delay: 0.04s; }
+.card-stagger:nth-child(3) { animation-delay: 0.06s; }
+.card-stagger:nth-child(4) { animation-delay: 0.08s; }
+.card-stagger:nth-child(5) { animation-delay: 0.10s; }
+.card-stagger:nth-child(6) { animation-delay: 0.12s; }
+.card-stagger:nth-child(7) { animation-delay: 0.14s; }
+.card-stagger:nth-child(8) { animation-delay: 0.16s; }
+.card-stagger:nth-child(9) { animation-delay: 0.18s; }
+.card-stagger:nth-child(10) { animation-delay: 0.20s; }
+.card-stagger:nth-child(11) { animation-delay: 0.22s; }
+.card-stagger:nth-child(12) { animation-delay: 0.24s; }
+.card-stagger:nth-child(13) { animation-delay: 0.26s; }
+.card-stagger:nth-child(14) { animation-delay: 0.28s; }
+.card-stagger:nth-child(15) { animation-delay: 0.30s; }
+.card-stagger:nth-child(16) { animation-delay: 0.32s; }
+.card-stagger:nth-child(17) { animation-delay: 0.34s; }
+.card-stagger:nth-child(18) { animation-delay: 0.36s; }
+.card-stagger:nth-child(19) { animation-delay: 0.38s; }
+.card-stagger:nth-child(20) { animation-delay: 0.40s; }
+.card-stagger:nth-child(21) { animation-delay: 0.42s; }
+.card-stagger:nth-child(22) { animation-delay: 0.44s; }
+.card-stagger:nth-child(23) { animation-delay: 0.46s; }
+.card-stagger:nth-child(24) { animation-delay: 0.48s; }
+.card-stagger:nth-child(25) { animation-delay: 0.50s; }
+.card-stagger:nth-child(26) { animation-delay: 0.52s; }
+.card-stagger:nth-child(27) { animation-delay: 0.54s; }
+.card-stagger:nth-child(28) { animation-delay: 0.56s; }
+.card-stagger:nth-child(29) { animation-delay: 0.58s; }
+.card-stagger:nth-child(30) { animation-delay: 0.60s; }
